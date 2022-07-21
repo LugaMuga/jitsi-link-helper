@@ -8,7 +8,9 @@ function saveSettings() {
 
 async function getFromStorage(key) {
   return new Promise((resolve, reject) => {
-    chrome.storage.sync.get(key, resolve);
+    chrome.storage.sync.get({
+      generator: CHAR_CODE_GENERATOR
+    }, resolve);
   })
       .then(result => {
         if (key == null) return result;
