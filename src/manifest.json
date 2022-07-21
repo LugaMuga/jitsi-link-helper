@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "Jitsi Link Helper",
+  "description": "A simple extension that allows you to create links for meetings",
+  "version": "0.1.0",
+  "minimum_chrome_version": "34",
+  "icons": {
+    "16": "assets/jitsi-logo-16x16.png",
+    "48": "assets/jitsi-logo-48x48.png",
+    "128": "assets/jitsi-logo-128x128.png"
+  },
+  "permissions": [
+    "storage",
+    "history"
+  ],
+  "host_permissions": [
+    "https://meet.jit.si/*"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "*://meet.jit.si/*"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://meet.jit.si/*"
+      ],
+      "js": [
+        "jquery-3.6.0.min.js",
+        "app.js",
+        "settings.js",
+        "recent.js"
+      ],
+      "css": [
+        "styles/styles.css"
+      ],
+      "all_frames": false,
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/jitsi-logo-blue.svg"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "action": {
+    "default_title": "Jitsi Link Helper",
+    "default_popup": "popup.html"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

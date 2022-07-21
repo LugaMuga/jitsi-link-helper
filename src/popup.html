@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <script src="jquery-3.6.0.min.js"></script>
+  <script src="generators/randomUtil.js"></script>
+  <script src="generators/nameGenerator.js"></script>
+  <script src="generators/charCodeGenerator.js"></script>
+  <script src="generators/numberCodeGenerator.js"></script>
+  <script src="app.js"></script>
+  <script src="settings.js"></script>
+  <script src="recent.js"></script>
+</head>
+<body>
+<div id="app" class="app">
+  <div id="title-container" class="title-container">
+    <span id="title" class="title"><img src="assets/jitsi-logo-blue.svg"/>Jitsi Link Helper</span>
+  </div>
+  <div id="generator" class="generator-row">
+    <span id="domain-name" class="domain-name"></span>
+    <input id="generated-link" class="generated-link" type="text">
+    <button id="refresh" type="button" class="button"><span class="bi-arrow-clockwise"></span></button>
+    <button id="copy" type="button" class="button"><span class="bi-clipboard-data"></span></button>
+    <button id="open" type="button" class="button"><span class="bi-arrow-up-right-square"></span></button>
+  </div>
+  <div id="settings" class="settings-row">
+    <input id="settings-switch" class="settings-switch" type="checkbox">
+    <label for="settings-switch" class="settings-headline">Settings</label>
+    <div class="settings-container">
+      <div class="radio">
+        <input label="Char codes" type="radio" id="char-code-generator" name="generator-type" value="char-code-generator" checked>
+        <input label="Numeric codes" type="radio" id="number-code-generator" name="generator-type" value="number-code-generator" checked>
+        <input label="Names" type="radio" id="name-code-generator" name="generator-type" value="name-code-generator">
+      </div>
+    </div>
+  </div>
+  <div id="recent-container" class="recent-container">
+    <span class="title">Recent meetings</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+.app {
+  font-size: 14px;
+  padding: 5px;
+  width: 530px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
+/* Title */
+.title-container {
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: bold;
+  background-image:linear-gradient(180deg, #61b1dc, #5b77e3);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.title img {
+  height: 15px;
+  width: 15px;
+}
+
+/*Generator*/
+.generator-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 105px 235px 40px 40px 40px;
+  grid-gap: 10px;
+}
+
+.generated-link {
+  font-size: 15px;
+  outline: none;
+  border: 0;
+  border-bottom: solid #a2a2a2;
+}
+
+.domain-name {
+  padding-top: 2px;
+}
+
+.button {
+  width: 40px;
+  height: 25px;
+}
+
+/*Settings*/
+.settings-row {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px 20px;
+}
+
+.settings-switch {
+  display: none;
+}
+
+.settings-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.settings-switch:checked~.settings-container {
+  max-height: 100px;
+}
+
+.settings-headline {
+  display: block;
+  position: relative;
+  user-select: none;
+  color: #a2a2a2;
+  font-weight: normal;
+  cursor: pointer;
+  text-decoration: underline dashed;
+}
+
+.settings-headline:hover {
+  color: #5d5d5d;
+}
+
+.settings-switch:checked~.settings-headline {
+  color: #5d5d5d;
+}
+
+.settings-headline::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 6px;
+  border: 6px solid #a2a2a2;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
+
+.settings-switch:checked~.settings-headline::before {
+  transform: rotate(180deg) translateY(6px);
+}
+
+.radio {
+  border-radius: 3px;
+  position: relative;
+}
+
+.radio input {
+  width: auto;
+  height: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 4px 8px;
+  font-size: 14px;
+  transition: all 100ms linear;
+}
+
+.radio input:checked {
+  background-image: linear-gradient(180deg, #61b1dc, #5b77e3);
+  color: #fff;
+  box-shadow: 0 1px 1px #0000002e;
+  text-shadow: 0 1px 0px #79485f7a;
+}
+
+.radio input:before {
+  content: attr(label);
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+/* RECENT ITEMS */
+.recent-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: row;
+  grid-gap: 5px;
+}
+
+.recent-link {
+  margin-left: 10px;
+}
